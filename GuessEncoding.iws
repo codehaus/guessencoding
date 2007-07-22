@@ -15,9 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GuessEncoding.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GuessEncoding.ipr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GuessEncoding.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GuessEncoding.iws" afterPath="$PROJECT_DIR$/GuessEncoding.iws" />
     </list>
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
