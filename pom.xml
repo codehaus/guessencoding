@@ -16,7 +16,7 @@
     <groupId>org.codehaus.guessencoding</groupId>
     <artifactId>guessencoding</artifactId>
     <name>Guess Encoding</name>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <build>
         <extensions>
@@ -38,9 +38,9 @@
     </build>
 
     <scm>
-        <connection>scm:svn:http://svn.codehaus.org/guessencoding/tags/guessencoding-1.0</connection>
-        <developerConnection>scm:svn:https://svn.codehaus.org/guessencoding/tags/guessencoding-1.0</developerConnection>
-        <url>http://svn.guessencoding.codehaus.org/tags/guessencoding-1.0</url>
+        <connection>scm:svn:http://svn.codehaus.org/guessencoding/trunk</connection>
+        <developerConnection>scm:svn:https://svn.codehaus.org/guessencoding/trunk</developerConnection>
+        <url>http://svn.guessencoding.codehaus.org/trunk/</url>
     </scm>
 
     <distributionManagement>
