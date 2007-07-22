@@ -17,9 +17,16 @@
     <groupId>com.glaforge.i18n.io</groupId>
     <artifactId>guessencoding</artifactId>
     <name>Guess Encoding</name>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav</artifactId>
+                <version>1.0-beta-2</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -30,4 +37,28 @@
             </plugin>
         </plugins>
     </build>
+
+    <scm>
+        <connection>scm:svn:http://svn.codehaus.org/guessencoding/trunk</connection>
+        <developerConnection>scm:svn:https://svn.codehaus.org/guessencoding/trunk</developerConnection>
+        <url>http://svn.guessencoding.codehaus.org/trunk/</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>codehaus.org</id>
+            <name>GuessEncoding Central Repository</name>
+            <url>dav:https://dav.codehaus.org/repository/guessencoding/</url>
+        </repository>
+        <snapshotRepository>
+            <id>codehaus.org</id>
+            <name>GuessEncoding Central Development Repository</name>
+            <url>dav:https://dav.codehaus.org/snapshots.repository/guessencoding/</url>
+        </snapshotRepository>
+        <site>
+            <id>codehaus.org</id>
+            <name>Mojo Website</name>
+            <url>dav:https://dav.codehaus.org/guessencoding/</url>
+        </site>
+    </distributionManagement>
 </project>
