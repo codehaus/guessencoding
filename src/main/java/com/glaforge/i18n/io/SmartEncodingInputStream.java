@@ -157,13 +157,17 @@ public class SmartEncodingInputStream extends InputStream {
      * @throws IOException
      */
     public int read() throws IOException {
+        if (counter == 0 && (this.charset.equals(Charset.forName("UTF-16LE")) || this.charset.equals(Charset.forName("UTF-16BE")))) {
+            if ( (buffer[counter] == -1 || buffer[counter] == -2 ) && buffer.length > counter + 2)
+                counter = counter + 2;
+        }
         if (counter < bufferLength) {
             return buffer[counter++];
         } else {
             return is.read();
         }
     }
-
+    
     /**
      * Gets a <code>Reader</code> with the right <code>Charset</code> as guessed by reading the beginning
      * of the underlying <code>InputStream</code>.
