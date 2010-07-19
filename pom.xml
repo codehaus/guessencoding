@@ -3,7 +3,7 @@
     <groupId>org.codehaus.guessencoding</groupId>
     <artifactId>guessencoding</artifactId>
     <name>Guess Encoding</name>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,9 +38,9 @@
     </build>
 
     <scm>
-        <connection>scm:svn:http://svn.codehaus.org/guessencoding/trunk</connection>
-        <developerConnection>scm:svn:https://svn.codehaus.org/guessencoding/trunk</developerConnection>
-        <url>http://svn.guessencoding.codehaus.org/trunk/</url>
+        <connection>scm:svn:http://svn.codehaus.org/guessencoding/tags/guessencoding-1.2</connection>
+        <developerConnection>scm:svn:https://svn.codehaus.org/guessencoding/tags/guessencoding-1.2</developerConnection>
+        <url>http://svn.guessencoding.codehaus.org/tags/guessencoding-1.2</url>
     </scm>
 
     <dependencies>
