@@ -57,8 +57,6 @@ public class SmartEncodingInputStream extends InputStream {
     
     private InputStream is;
     private int bufferLength;
-    private boolean enforce8Bit;
-    private Charset defaultCharset;
     private byte[] buffer;
     private int counter;
     private Charset charset;
@@ -89,11 +87,9 @@ public class SmartEncodingInputStream extends InputStream {
             throws IOException {
         this.is = is;
         this.bufferLength = bufferLength;
-        this.enforce8Bit = enforce8Bit;
         this.buffer = new byte[bufferLength];
 
         this.bufferLength = is.read(buffer);
-        this.defaultCharset = defaultCharset;
         CharsetToolkit charsetToolkit = new CharsetToolkit(buffer, defaultCharset);
         charsetToolkit.setEnforce8Bit(enforce8Bit);
         this.charset = charsetToolkit.guessEncoding();
