@@ -269,6 +269,21 @@ public class CharsetToolkit {
         // finally, if it's not UTF-8 nor US-ASCII, let's assume the encoding is the default encoding
         return this.defaultCharset;
     }
+    
+	/**
+	 * Returns the size of the Byte Order Marker if any
+	 * 
+	 * @return the size of the BOM in bytes
+	 */
+	public int getBomSize() {
+		if (hasUTF8Bom(buffer)) {
+			return 3;
+		} else if (hasUTF16LEBom(buffer) || hasUTF16BEBom(buffer)) {
+			return 2;
+		} else {
+			return 0;
+		}
+	}
 
     public static Charset guessEncoding(File f, int bufferLength) throws FileNotFoundException, IOException {
         FileInputStream fis = new FileInputStream(f);
@@ -405,7 +420,7 @@ public class CharsetToolkit {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 //		File file = new File("utf-8.txt");
-        File file = new File("windows-1252.txt");
+        File file = new File("d");
 
         Charset guessedCharset = CharsetToolkit.guessEncoding(file, 4096);
         System.err.println("Charset found: " + guessedCharset.displayName());

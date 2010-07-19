@@ -91,13 +91,15 @@ public class SmartEncodingInputStream extends InputStream {
         this.bufferLength = bufferLength;
         this.enforce8Bit = enforce8Bit;
         this.buffer = new byte[bufferLength];
-        this.counter = 0;
 
         this.bufferLength = is.read(buffer);
         this.defaultCharset = defaultCharset;
         CharsetToolkit charsetToolkit = new CharsetToolkit(buffer, defaultCharset);
         charsetToolkit.setEnforce8Bit(enforce8Bit);
         this.charset = charsetToolkit.guessEncoding();
+        
+        // skip the BOM
+        this.counter = charsetToolkit.getBomSize();
     }
 
     /**
@@ -157,10 +159,6 @@ public class SmartEncodingInputStream extends InputStream {
      * @throws IOException
      */
     public int read() throws IOException {
-        if (counter == 0 && (this.charset.equals(Charset.forName("UTF-16LE")) || this.charset.equals(Charset.forName("UTF-16BE")))) {
-            if ( (buffer[counter] == -1 || buffer[counter] == -2 ) && buffer.length > counter + 2)
-                counter = counter + 2;
-        }
         if (counter < bufferLength) {
             return buffer[counter++];
         } else {
