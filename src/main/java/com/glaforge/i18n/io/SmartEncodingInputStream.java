@@ -156,7 +156,7 @@ public class SmartEncodingInputStream extends InputStream {
      */
     public int read() throws IOException {
         if (counter < bufferLength) {
-            return buffer[counter++];
+            return buffer[counter++] & 0xFF; // mask needed because buffer actually contains unsigned bytes
         } else {
             return is.read();
         }
