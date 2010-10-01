@@ -31,7 +31,7 @@ public class SmartEncodingInputStreamTest extends TestCase {
 						.forName("ISO-8859-1"));
 		assertEquals(Charset.forName("ISO-8859-1"), smartEncodingInputStream
 				.getEncoding());
-		assertEquals("é", IOUtils
+		assertEquals("\u00E9", IOUtils
 				.toString(smartEncodingInputStream.getReader()));
 
 	}
@@ -42,7 +42,7 @@ public class SmartEncodingInputStreamTest extends TestCase {
 						.forName("ISO-8859-1"));
 		assertEquals(Charset.forName("UTF-16BE"), smartEncodingInputStream
 				.getEncoding());
-		assertEquals("é", IOUtils
+		assertEquals("\u00E9", IOUtils
 				.toString(smartEncodingInputStream.getReader()));
 
 	}
@@ -53,7 +53,7 @@ public class SmartEncodingInputStreamTest extends TestCase {
 						.forName("ISO-8859-1"));
 		assertEquals(Charset.forName("UTF-16LE"), smartEncodingInputStream
 				.getEncoding());
-		assertEquals("é", IOUtils
+		assertEquals("\u00E9", IOUtils
 				.toString(smartEncodingInputStream.getReader()));
 
 	}
@@ -64,7 +64,7 @@ public class SmartEncodingInputStreamTest extends TestCase {
 						.forName("ISO-8859-1"));
 		assertEquals(Charset.forName("UTF-8"), smartEncodingInputStream
 				.getEncoding());
-		assertEquals("é", IOUtils
+		assertEquals("\u00E9", IOUtils
 				.toString(smartEncodingInputStream.getReader()));
 
 	}
@@ -75,7 +75,7 @@ public class SmartEncodingInputStreamTest extends TestCase {
 						.forName("ISO-8859-1"));
 		assertEquals(Charset.forName("UTF-8"), smartEncodingInputStream
 				.getEncoding());
-		assertEquals("é", IOUtils
+		assertEquals("\u00E9", IOUtils
 				.toString(smartEncodingInputStream.getReader()));
 
 	}
