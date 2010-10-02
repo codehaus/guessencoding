@@ -12,8 +12,8 @@
         <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav</artifactId>
-                <version>1.0-beta-2</version>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>1.0-beta-6</version>
             </extension>
         </extensions>
         <plugins>
@@ -24,14 +24,6 @@
             	<configuration>
                     <source>1.4</source>
                     <target>1.4</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.0</version>
-                <configuration>
-                    <remoteTagging>true</remoteTagging>
                 </configuration>
             </plugin>
         </plugins>
